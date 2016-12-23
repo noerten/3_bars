@@ -2,12 +2,12 @@ import json
 import os
 
 
-def load_data(filepath):
+def load_bars(filepath):
     if not os.path.exists(filepath):
         return None
     with open(filepath) as data_file:
-        data = json.load(data_file)
-    return data
+        bars = json.load(data_file)
+    return bars
 
 
 def get_biggest_bar(bars):
@@ -32,7 +32,7 @@ def get_closest_bar(bars, longitude, latitude):
 
 if __name__ == '__main__':
     file_name = input('Enter file name/path: ')
-    bars = load_data(file_name)
+    bars = load_bars(file_name)
     biggest_bar = get_biggest_bar(bars)
     smallest_bar = get_smallest_bar(bars)
     print("smallest bar: {}\n"

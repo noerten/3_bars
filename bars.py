@@ -39,7 +39,7 @@ def get_closest_bar(data, longitude, latitude):
     return closest_bar
 
 if __name__ == '__main__':
-    data = load_data('data-2897-2016-11-23.json')
+    data = load_data('data.json')
     biggest_bar = get_biggest_bar(data)
     print('biggest bar', biggest_bar)
     smallest_bar = get_smallest_bar(data)

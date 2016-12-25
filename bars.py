@@ -22,10 +22,10 @@ def get_smallest_bar(bars):
 
 def get_closest_bar(bars, longitude, latitude):
     for bar in bars:
-        # bar_coords - list with longitude and latitude
-        bar_coords = bar['geoData']['coordinates']
-        bar['dist_to_user'] = ((bar_coords[0] - longitude) ** 2 +
-                               (bar_coords[1] - latitude) ** 2) ** (1/2)
+        bar_longitude = bar['geoData']['coordinates'][0]
+        bar_latitude = bar['geoData']['coordinates'][1]
+        bar['dist_to_user'] = ((bar_longitude - longitude) ** 2 +
+                               (bar_latitude - latitude) ** 2) ** (1/2)
     closest_bar_obj = min(bars, key=lambda i: i['dist_to_user'])
     return closest_bar_obj['Name']
 
